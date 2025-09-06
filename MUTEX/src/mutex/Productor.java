@@ -1,7 +1,7 @@
 package mutex;
 
 /**
- *
+ * VERISIÓN BLOQUEO GRUESO
  * @author Luis Angel de la Torre Gómez
  */
 public class Productor implements Runnable {    
@@ -31,7 +31,7 @@ public class Productor implements Runnable {
     public void run() {
         try {
             MUTEX.lock.lock();
-            MUTEX.listaDeTareas.addLast(this.agregar);
+            agregarTarea();
         } finally {
             System.out.println("Tiempo tomado para agregar una tarea: " + (((System.nanoTime() - MUTEX.t0) / 1_000_000 + "ms")));
             MUTEX.lock.unlock();
