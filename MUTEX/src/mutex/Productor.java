@@ -33,7 +33,7 @@ public class Productor implements Runnable {
             MUTEX.lock.lock();
             MUTEX.listaDeTareas.addLast(this.agregar);
         } finally {
-            System.out.println("Tiempo tomado para agregar una tarea: " + (((System.nanoTime() - MUTEX.t0) / 1_000_000)));
+            System.out.println("Tiempo tomado para agregar una tarea: " + (((System.nanoTime() - MUTEX.t0) / 1_000_000 + "ms")));
             MUTEX.lock.unlock();
         }
     }

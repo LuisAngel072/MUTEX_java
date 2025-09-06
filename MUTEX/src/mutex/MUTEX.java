@@ -25,7 +25,7 @@ public class MUTEX {
          hiloProd.join();
        }
        
-
+       long t1 = System.nanoTime();
        //Crea y ejecuta los hilos hasta que se terminen las tareas
        while (!listaDeTareas.isEmpty()) {
         for (int i = 0; i < 5; i++) {
@@ -35,7 +35,7 @@ public class MUTEX {
         }
 
         long t2 = System.nanoTime();
-        System.out.println("\nTiempo de realización de todas las tareas: " + ((t2 - t0) / 1_000_000));
+        System.out.println("\nTiempo de realización de todas las tareas: " + ((t2 - t1) / 1_000_000) + "ms");
         
     }
 }
